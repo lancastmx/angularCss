@@ -1,0 +1,51 @@
+/* Mixin para el botón activo */
+@mixin button-active {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #0056b3;
+}
+
+/* Mixin para el botón hover */
+@mixin button-hover {
+  background-color: #0056b3;
+  color: #fff;
+  border: 2px solid #003865;
+}
+
+/* Mixin para el botón disabled */
+@mixin button-disabled {
+  background-color: #ccc;
+  color: #999;
+  border: 2px solid #999;
+}
+
+/* Bloque principal del botón */
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  /* Elemento: ícono dentro del botón */
+  &__icon {
+    margin-right: 5px;
+  }
+
+  /* Modificador: botón activo */
+  &--active {
+    @include button-active;
+  }
+
+  /* Modificador: botón hover */
+  &--hover {
+    @include button-hover;
+  }
+
+  /* Modificador: botón disabled */
+  &--disabled {
+    @include button-disabled;
+    cursor: not-allowed;
+  }
+}

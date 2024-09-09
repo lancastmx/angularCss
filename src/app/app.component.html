@@ -1,3 +1,28 @@
 <h1>Hola</h1>
 <p>hola desde laptop_windows</p>
 <p>Hola desde Mac</p>
+<div class="my-box">
+  Este es un texto con estilos personalizados.
+</div>
+<div class="my-box my-box--highlighted">
+  <h2 class="my-box__title">Este es un título con BEM</h2>
+  <p>Este es un texto dentro del bloque con el fondo resaltado.</p>
+</div>
+<div class="my-box my-box--highlighted">
+  <h2 class="my-box__title">Este es un título con BEM</h2>
+  <p>Este es un texto dentro del bloque con el fondo resaltado.</p>
+</div>
+<button
+  class="button"
+  [ngClass]="{
+    'button--active': isActive,
+    'button--hover': isHovered,
+    'button--disabled': isDisabled
+  }"
+  (mouseenter)="isHovered = true"
+  (mouseleave)="isHovered = false"
+  [disabled]="isDisabled"
+>
+  <span class="button__icon">&#10004;</span> <!-- Aquí un ícono dentro del botón -->
+  Click Me
+</button>
